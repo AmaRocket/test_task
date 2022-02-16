@@ -10,7 +10,7 @@ def coun_valid_passwords():
     If the number matches the range, it adds it to the list.
     :return: Сount of matches in file
     """
-    valid_passwords = []
+    valid_passwords = set()
 
     for i in line:
         symbols_in_password = str(re.findall(r"^\w", i)[0])
@@ -30,7 +30,7 @@ def coun_valid_passwords():
 
         if count_symbols_in_passwords in range(start_of_range, end_of_range + 1):
 
-            valid_passwords.append(passwords)
+            valid_passwords.add(passwords)
             print("Password: ", passwords, " - Password is valid")
             print("+---------------------------+")
             print()
